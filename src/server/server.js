@@ -1,4 +1,5 @@
 require('dotenv').config();
+ 
 const Hapi = require('@hapi/hapi');
 const routes = require('../server/routes');
 const loadModel = require('../services/loadModel');
@@ -28,7 +29,7 @@ const InputError = require('../exceptions/InputError');
                 status: 'fail',
                 message: `${response.message} Silakan gunakan foto lain.`
             })
-            newResponse.code(response.statusCode)
+            newResponse.code(response.output.statusCode)
             return newResponse;
         }
  
